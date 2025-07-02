@@ -1,4 +1,11 @@
-//let's do a cool 404 page
+import React from 'react'
 
-// This goes at the bottom of the file
-export default NotFound;
+const NotFound = () => {
+  return (
+    <div>
+      
+    </div>
+  )
+}
+
+export default NotFound
