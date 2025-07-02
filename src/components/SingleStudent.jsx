@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const SingleStudent = () => {
   return (
     <div>
@@ -9,3 +10,4 @@ const SingleStudent = () => {
 }
 
 export default SingleStudent
+

@@ -5,14 +5,15 @@ import axios from "axios";
 import "./AppStyles.css";
 import NavBar from "./components/NavBar";
 import api from "./api/axiosInstance";
-import HomePage from "./components/HomePage";
-import CampusesList from "./components/CampusesList";
-import CampusForm from "./components/CampusForm";
-import SingleCampus from "./components/SingleCampus";
+// import HomePage from "./components/HomePage";
+// import CampusesList from "./components/CampusesList";
+// import CampusForm from "./components/CampusForm";
+// import SingleCampus from "./components/SingleCampus";
 import StudentsList from "./components/StudentsList";
-import StudentForm from "./components/StudentForm";
-import SingleStudent from "./components/SingleStudent";
-import NotFound from "./components/NotFound";
+// import StudentForm from "./components/StudentForm";
+import StudentCard from "./components/StudentCard";
+// import SingleStudent from "./components/SingleStudent";
+// import NotFound from "./components/NotFound";
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 
 const App = () => {
@@ -25,22 +26,22 @@ const App = () => {
       console.log("✅ API StudentResponse:", StudentResponse.data);
       setStudents(StudentResponse.data);
     } catch (error) {
-      console.error("Error fetching tasks:", error);
+      console.error("Error fetching: ", error);
     }
   }
 
-  async function fetchAllCampuses() {
-    try {
-      const CampusResponse = await api.get(`/campuses`);
-      console.log("✅ API CampusResponse:", CampusResponse.data);
-      setCampuses(CampusResponse.data);
-    } catch (error) {
-      console.error("Error fetching tasks:", error);
-    }
-  }
+  // async function fetchAllCampuses() {
+  //   try {
+  //     const CampusResponse = await api.get(`/campuses`);
+  //     console.log("✅ API CampusResponse:", CampusResponse.data);
+  //     setCampuses(CampusResponse.data);
+  //   } catch (error) {
+  //     console.error("Error fetching: ", error);
+  //   }
+  // }
 
   useEffect(() => {
-    fetchAllCampuses();
+    // fetchAllCampuses();
     fetchAllStudents();
   }, []);
 
@@ -52,43 +53,44 @@ const App = () => {
         {/* Please consider the following routes as a draft and not final */}
         {/* I reviewed the assignment sheet and thought about the necessary components */}
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          {/* <Route path="/" element={<HomePage />} /> */}
 
-          <Route
+          {/* <Route
             path="/campuses"
             element={<CampusesList campuses={campuses} />}
-          />
+          /> */}
 
-          <Route
+          {/* <Route
             path="/campuses/new"
             element={<CampusForm mode="create" onSuccess={fetchAllCampuses} />}
-          />
+          /> */}
 
-          <Route
+          {/* <Route
             path="/campuses/:id/edit"
             element={<CampusForm mode="edit" onSuccess={fetchAllCampuses} />}
-          />
+          /> */}
 
-          <Route path="/campuses/:id" element={<SingleCampus />} />
+          {/* <Route path="/campuses/:id" element={<SingleCampus />} /> */}
 
           <Route
             path="/students"
             element={<StudentsList students={students} />}
           />
 
-          <Route
+          {/* <Route
             path="/students/new"
             element={<StudentForm mode="create" onSuccess={fetchAllStudents} />}
-          />
+          /> */}
 
-          <Route
+          {/* <Route
             path="/students/:id/edit"
             element={<StudentForm mode="edit" onSuccess={fetchAllStudents} />}
-          />
+          /> */}
 
+          {/* 
           <Route path="/students/:id" element={<SingleStudent />} />
 
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </div>
     </div>
