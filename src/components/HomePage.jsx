@@ -1,4 +1,11 @@
-// to do
+import React from 'react'
 
-// This goes at the bottom of the file
-export default HomePage;
+const HomePage = () => {
+  return (
+    <div>
+      
+    </div>
+  )
+}
+
+export default HomePage

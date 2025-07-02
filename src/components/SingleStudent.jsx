@@ -1,4 +1,11 @@
-// to do
+import React from 'react'
 
-// This goes at the bottom of the file
-export default SingleStudent;
+const SingleStudent = () => {
+  return (
+    <div>
+      
+    </div>
+  )
+}
+
+export default SingleStudent
